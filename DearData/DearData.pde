@@ -146,9 +146,6 @@ void draw(){
   background(127);
   drawRecordConnections();
   drawNodes();
-  if(key == 's'){
-    save("result.jpg");
-  }
 }
 color getStatusColor(Status status){
     color c;
@@ -184,6 +181,7 @@ void drawNode(GraphNode node,int xPos,int yPos,float size,boolean isHovered){
       circle(xPos,yPos,size*(1.0+p*0.2));
       fill(0);
       text(node.getData().getDate().getFormatted(),xPos,yPos);
+      text(node.getData().getTrains()+"",xPos,yPos+15);
       
     }
     else{
